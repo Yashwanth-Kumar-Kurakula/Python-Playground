@@ -59,8 +59,6 @@ If you feel that you have any interesting beginner level or intermediate level p
     git commit -m "change... and add..."
     ```
 
-> Please start your commit with a lowercase letter to maintain consistency in the commit history
-
 7. Push your changes to your GitHub repository:
 
     ```sh
