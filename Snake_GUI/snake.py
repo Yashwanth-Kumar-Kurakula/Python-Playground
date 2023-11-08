@@ -1,3 +1,8 @@
+'''
+Thanks to Clear code for the tutorial.
+Tutorial Reference -  https://www.youtube.com/watch?v=QFvqStqPCRU&t=6105s
+'''
+
 import pygame, sys, random
 from pygame.math import Vector2
 
