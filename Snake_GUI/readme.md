@@ -15,17 +15,17 @@ This Python program implements a simple Snake Game using the Pygame library. The
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/snake-game.git
-   cd snake-game
+   git clone https://github.com/Yashwanth-Kumar-Kurakula/Python-Playground 
    ```
-
-2. **Install Dependencies:**
+2. **Navigate to the __Snake_GUI__ Folder**
+   
+3. **Install Dependencies:**
    Ensure you have Python and Pygame installed. You can install Pygame using:
    ```bash
    pip install pygame
    ```
 
-3. **Run the Game:**
+4. **Run the Game:**
    ```bash
    python snake_game.py
    ```
