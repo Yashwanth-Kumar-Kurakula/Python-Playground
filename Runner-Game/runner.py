@@ -63,10 +63,7 @@ test_font = pygame.font.Font("font/Pixeltype.ttf", 50)
 sky_surface = pygame.image.load("graphics/Sky.png").convert()
 ground_surface = pygame.image.load("graphics/ground.png").convert()
 
-# score_surf = test_font.render("PARUGU", False, "black")
-# score_rect = score_surf.get_rect(center = (400, 50))
 
-#obstacles
 snail_frame_1 = pygame.image.load("graphics/snail/snail1.png").convert_alpha()
 snail_frame_2 = pygame.image.load("graphics/snail/snail2.png").convert_alpha()
 snail_frames = [snail_frame_1, snail_frame_2]
@@ -95,6 +92,12 @@ player_stand_surf = pygame.image.load("graphics/Player/player_stand.png").conver
 player_stand_surf = pygame.transform.scale2x(player_stand_surf)
 player_stand_rect = player_stand_surf.get_rect(center = (400, 200))
 
+jump_sound =pygame.mixer.Sound("audio/jump.mp3")
+jump_sound.set_volume(0.5)
+
+bg_music = pygame.mixer.Sound("audio/music.wav")
+bg_music.set_volume(0.6)
+bg_music.play(-1)
 
 player_gravity = -20
 
@@ -127,6 +130,7 @@ while True:
                 if event.key == pygame.K_SPACE:
                     if player_rect.bottom == 300:
                         player_gravity = -20
+                        jump_sound.play()
             
             if event.type == obstacle_timer:
                 if random.randint(0,2):
@@ -158,18 +162,17 @@ while True:
     if game_active:
         screen.blit(sky_surface, (0,0))
         screen.blit(ground_surface, (0,300))
-        # screen.blit(score_surf, score_rect)
+
 
         score = display_score()
         
 
-        #obstacle_movement
+
         obstacle_rect_list = obstacle_movement(obstacle_rect_list)
 
-        #Collisions
         game_active = collisions(player_rect, obstacle_rect_list)
 
-        # Player
+
         player_gravity += 1
         player_rect.y += player_gravity
         if player_rect.bottom >= 300: 
