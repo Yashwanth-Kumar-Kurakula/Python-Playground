@@ -1,27 +1,54 @@
-import turtle, pandas
+import turtle
+import pandas
 
-data = pandas.read_csv("50_states.csv")
-states_name = data.state.to_list()
+def load_states_data(file_path):
+    """
+    Load U.S. states data from a CSV file.
 
+    Parameters:
+    - file_path (str): Path to the CSV file.
 
-screen = turtle.Screen()
-screen.title("U.S. States Game")
-image = "blank_states_img.gif"
-screen.addshape(image)
+    Returns:
+    - list: List of U.S. states.
+    """
+    data = pandas.read_csv(file_path)
+    return data.state.to_list()
 
-turtle.shape(image)
+def main():
+    """
+    Main function to run the U.S. States Guess Game.
+    """
+    # Load U.S. states data
+    states_name = load_states_data("50_states.csv")
 
-game_active = True
-guessed_states = []
+    # Set up the turtle screen
+    screen = turtle.Screen()
+    screen.title("U.S. States Game")
 
-while game_active and len(guessed_states) < 50:
-    guess = screen.textinput("US States Game", "Enter the name of state: ")
-    guess = str(guess).strip().capitalize()
-    if guess == "Exit":
-        game_active = False
+    # Load the U.S. map image
+    image = "blank_states_img.gif"
+    screen.addshape(image)
+    turtle.shape(image)
 
-    if guess in states_name:
+    # Initialize game variables
+    game_active = True
+    guessed_states = []
+
+    # Main game loop
+    while game_active and len(guessed_states) < 50:
+        # Get user input for state name
+        guess = screen.textinput("US States Game", "Enter the name of the state: ")
+        guess = str(guess).strip().capitalize()
+
+        # Check if the user wants to exit the game
+        if guess == "Exit":
+            game_active = False
+
+        # Check if the guessed state is correct
+        if guess in states_name:
             guessed_states.append(guess)
+
+            # Display the guessed state on the map
             t = turtle.Turtle()
             t.hideturtle()
             t.penup()
@@ -30,7 +57,11 @@ while game_active and len(guessed_states) < 50:
             y_cor = int(state.y.iloc[0])
             t.goto(x_cor, y_cor)
             t.write(f"*{state.state.item()}", font=("Arial", 8, "normal"))
-    else:
-        pass
+        else:
+            pass
 
-turtle.mainloop()
+    turtle.mainloop()
+
+# Run the main function
+if __name__ == "__main__":
+    main()
