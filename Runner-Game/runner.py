@@ -1,3 +1,8 @@
+'''
+Thanks to Clear code for the tutorial.
+Tutorial Reference -  https://www.youtube.com/watch?v=AY9MnQ4x3zk&t=3221s
+'''
+
 import pygame
 from sys import exit
 import random
