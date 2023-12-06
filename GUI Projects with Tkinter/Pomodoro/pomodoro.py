@@ -12,11 +12,11 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
 timer = None
-# ✔
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
 def reset_timer():
+    """Reset the timer to its initial state."""
     window.after_cancel(timer)
     canvas.itemconfig(timer_text, text="00:00")
     timer_label.config(text="Timer", background=YELLOW, foreground=GREEN, font=(FONT_NAME, 40, "bold"))
@@ -26,6 +26,7 @@ def reset_timer():
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
+    """Start the Pomodoro timer."""
     global reps
     reps += 1
 
@@ -45,6 +46,7 @@ def start_timer():
     
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 def count_down(count):
+    """Countdown mechanism for the timer."""
     count_min = math.floor(count / 60)
     count_sec = count % 60
     if count_sec < 10:
@@ -57,7 +59,7 @@ def count_down(count):
     else:
         start_timer()
         marks = ""
-        work_sessions = math.floor(range/2)
+        work_sessions = math.floor(reps / 2)
         for _ in range(work_sessions):
             marks += "✔"
         checkmark.config(text=marks)
