@@ -1,5 +1,12 @@
 <h1 align="center">Python-Playground</h1>
 
+## Table of Contents
+- [What is this Project](#what-is-this-project)
+- [How to Run the Project](#how-to-run-the-project)
+- [How to Contribute to the Project](#you-want-to-contribute)
+- [Having Problems?](#having-problems)
+- [License](#license)
+
 ## What is this Project?
 
 This is a collection of playful python projects for new learners, emerging developers can leverage these projects in enhancing their skill set while simultaneoulsy learning new things. All the code is properly documented with source and references attached.
@@ -69,6 +76,18 @@ If you feel that you have any interesting beginner level or intermediate level p
 
 9. Wait for your changes to be reviewed and validated. :blush:
 
+## Having Problems?
+
+If you're using Visual Studio Code (VSCode), you might run into an issue where your code is running in the wrong place and can't find the files it needs to work correctly. If this sounds familiar, here's a simple solution:
+
+1. Go to "User Settings" in VSCode.
+
+2. Use the search bar to find "python.terminal.executeInFileDir."
+
+3. Change its value from "false" to "true" by replacing (=).
+
+This adjustment ensures that your Python code runs in the same directory as your files, making everything work smoothly! 😊
+
 ## License
 
-This project is released under the [MIT license](https://github.com/timotheeMM/youtube-downloader/blob/main/LICENSE).
+This project is released under the [MIT license](https://github.com/Yashwanth-Kumar-Kurakula/Python-Playground/blob/main/LICENSE).
