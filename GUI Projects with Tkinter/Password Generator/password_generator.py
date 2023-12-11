@@ -2,6 +2,7 @@ import tkinter as tk
 import ttkbootstrap as ttk
 import random
 import string
+from tkinter import messagebox
 
 #Password Generator
 def generate_password():
@@ -20,10 +21,10 @@ def add_to_file():
                 f.writelines(f"{website_var.get()} | {email_var.get()} | {password_var.get()}\n")
         
         else:
-            print("Invalid Password")
+            messagebox.showerror("Error", "Invalid Password Detected. Please enter a password or use the Generate Password button to create a new one")
 
     else:
-        print("Debug Successful")
+        messagebox.showerror("Invalid Entries Detected", "Please check all the fields once again")
 
 
 # UI Setup
