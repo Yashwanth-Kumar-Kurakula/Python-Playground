@@ -1,36 +1,53 @@
 import pandas
 
-def read_phonetic_data(file_path):
+def load_phonetic_data(file_path):
     """
-    Reads the NATO phonetic alphabet data from a CSV file and returns a dictionary.
-    
+    Load the NATO phonetic alphabet data from a CSV file.
+
     Parameters:
-    - file_path (str): The path to the CSV file containing the NATO phonetic alphabet data.
-    
+    - file_path (str): Path to the CSV file containing NATO phonetic alphabet data.
+
     Returns:
-    - dict: A dictionary mapping letters to their corresponding phonetic codes.
+    - pandas.DataFrame: A DataFrame containing the loaded data.
     """
     data = pandas.read_csv(file_path)
-    phonetic_data = {row.letter: row.code for (index, row) in data.iterrows()}
-    return phonetic_data
+    return data
 
-def main():
+def create_phonetic_dict(data_frame):
     """
-    Main function to get user input, convert it to NATO phonetic alphabet codes, and print the result.
+    Create a dictionary mapping letters to their corresponding NATO phonetic codes.
+
+    Parameters:
+    - data_frame (pandas.DataFrame): DataFrame containing NATO phonetic alphabet data.
+
+    Returns:
+    - dict: A dictionary where keys are letters and values are corresponding phonetic codes.
     """
-    # Read NATO phonetic alphabet data from the CSV file
-    file_path = "nato_phonetic_alphabet.csv"
-    phonetic_data = read_phonetic_data(file_path)
+    return {row.letter: row.code for (index, row) in data_frame.iterrows()}
 
-    # Get user input and convert it to uppercase
-    name = input("Enter something: ").upper()
+def phonetic_alphabet():
+    """
+    Get the NATO phonetic alphabet representation for a user-entered word.
+    """
+    # Load NATO phonetic alphabet data
+    data = load_phonetic_data("nato_phonetic_alphabet.csv")
 
-    # Generate a list of NATO phonetic alphabet codes for each letter in the user input
-    output_list = [phonetic_data[letter] for letter in name]
+    # Create a dictionary mapping letters to their corresponding NATO phonetic codes
+    phonetic_dict = create_phonetic_dict(data)
 
-    # Print the resulting list of phonetic alphabet codes
-    print(output_list)
+    # Get user input for a word
+    word = input("Enter a word: ").upper()
 
-# Call the main function if the script is executed
-if __name__ == "__main__":
-    main()
+    try:
+        # Generate a list of NATO phonetic codes for each letter in the word
+        output_list = [phonetic_dict[letter] for letter in word]
+    except KeyError:
+        # Handle the case where a non-alphabetic character is entered
+        print("Only alphabets allowed, Numeric characters are not allowed!")
+        phonetic_alphabet()
+    else:
+        # Print the NATO phonetic representation of the entered word
+        print(output_list)
+
+# Execute the main function to get the NATO phonetic representation for a user-entered word
+phonetic_alphabet()
