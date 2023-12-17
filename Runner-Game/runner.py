@@ -1,5 +1,3 @@
-#Adding new characters, obstacles and variations to the game in the coming update
-
 '''
 Thanks to Clear code for the tutorial.
 Tutorial Reference -  https://www.youtube.com/watch?v=AY9MnQ4x3zk&t=3221s
