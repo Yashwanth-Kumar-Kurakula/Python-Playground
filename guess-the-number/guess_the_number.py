@@ -52,5 +52,5 @@ def main():
     if tries == 0:
         print(f"Oops! You are out of tries, the correct number was {correct_number}")
 
-if __name__ == "__main__":
-    main()
+
+main()
