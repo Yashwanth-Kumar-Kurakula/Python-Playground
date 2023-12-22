@@ -2,19 +2,25 @@ import smtplib
 import random
 import datetime as dt
 
-my_email = "Enter your email here"
-password = "Enter your password here"
+my_email = "Replace with your email"
+password = "Replace with your password"
 
 now = dt.datetime.now()
-weekday = now.weekday()
-if weekday == 0:
-    with open("quotes.txt", "r") as f:
-        x = f.readlines()
-    
-    quote = random.choice(x)
-    with smtplib.SMTP("Enter your smtp here") as connection:
-        connection.starttls()
-        connection.login(user=my_email, password=password)
-        connection.sendmail(from_addr=my_email, 
-                            to_addrs="Enter the email you want to send the mail", 
-                            msg=f"Subject:Motivational Quotes test \n\n{quote}")
+
+with open("quotes.txt", "r") as f:
+    x = f.readlines()
+
+with open("python_tips.txt", "r") as u:
+    y = u.read()
+
+quote = random.choice(x)
+tips = y.split("\n\n")
+
+with smtplib.SMTP("smtp.gmail.com") as connection:
+    connection.starttls()
+    connection.login(user=my_email, password=password)
+    connection.sendmail(from_addr=my_email,
+                        to_addrs="Replace with To Address",
+                        msg=f"Subject:Daily Motivation by DelusionalDeveloper \n\n{quote} \n Tip of the day: {random.randint(0,99)}")
+
+
