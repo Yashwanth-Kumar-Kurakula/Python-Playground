@@ -1,299 +1,334 @@
-1. Use list comprehensions for concise and readable code.
-   Example: squares = [x**2 for x in range(10)]
-
-2. Leverage unpacking to simplify variable assignments.
-   Example: a, b, c = 1, 2, 3
-
-3. Employ f-strings for string formatting in a readable way.
-   Example: name = "John"; greeting = f"Hello, {name}!"
-
-4. Use the enumerate function for iterating with indices.
-   Example: for index, value in enumerate(['a', 'b', 'c']): ...
-
-5. Take advantage of zip for parallel iteration.
-   Example: for x, y in zip(list1, list2): ...
-
-6. Utilize the collections module for specialized data structures.
-   Example: from collections import Counter
-
-7. Embrace context managers for resource management.
-   Example: with open('file.txt', 'r') as file: ...
-
-8. Learn and use list slicing for efficient data manipulation.
-   Example: sublist = my_list[2:5]
-
-9. Master the power of decorators to enhance functions.
-   Example: @my_decorator; def my_function(): ...
-
-10. Use set operations for efficient data manipulation.
-    Example: intersection = set1 & set2
-
-11. Leverage default values in function arguments.
-    Example: def greet(name="Guest"): ...
-
-12. Use the ternary operator for concise conditional expressions.
-    Example: result = "even" if x % 2 == 0 else "odd"
-
-13. Apply the map function for element-wise operations.
-    Example: squared_values = list(map(lambda x: x**2, my_list))
-
-14. Utilize the join method for string concatenation.
-    Example: sentence = ' '.join(words)
-
-15. Explore the itertools module for advanced iterators.
-    Example: from itertools import permutations
-
-16. Use generator expressions to create memory-efficient iterators.
-    Example: squares = (x**2 for x in range(10))
-
-17. Learn about and use the with statement for file handling.
-    Example: with open('file.txt', 'r') as file: ...
-
-18. Employ namedtuples for lightweight, readable data structures.
-    Example: from collections import namedtuple
-
-19. Use the logging module for effective debugging and logging.
-    Example: import logging; logging.info("This is an info message")
-
-20. Understand and leverage the power of lambda functions.
-    Example: add = lambda x, y: x + y
-
-21. Familiarize yourself with virtual environments for project isolation.
-    Example: python -m venv myenv
-
-22. Utilize the zip function for combining iterables.
-    Example: pairs = list(zip(keys, values))
-
-23. Embrace the power of comprehensions for dictionaries.
-    Example: squares = {x: x**2 for x in range(5)}
-
-24. Use contextlib for creating custom context managers.
-    Example: from contextlib import contextmanager
-
-25. Leverage the any() and all() functions for boolean checks.
-    Example: any(x > 0 for x in my_list)
-
-26. Understand and use the global and nonlocal keywords.
-    Example: global_var = 10; def my_function(): global global_var
-
-27. Take advantage of the filter function for conditional filtering.
-    Example: evens = list(filter(lambda x: x % 2 == 0, my_list))
-
-28. Explore the json module for JSON serialization and deserialization.
-    Example: import json; data = json.loads(json_string)
-
-29. Use the sorted function with custom key functions.
-    Example: sorted_list = sorted(my_list, key=lambda x: x.lower())
-
-30. Leverage the pprint module for pretty-printing data structures.
-    Example: from pprint import pprint; pprint(my_dict)
-
-31. Understand the difference between is and == for object comparison.
-    Example: if a is b: ...
-
-32. Utilize the bisect module for binary search operations.
-    Example: from bisect import bisect_left; index = bisect_left(sorted_list, value)
-
-33. Learn about the timeit module for code performance analysis.
-    Example: import timeit; timeit.timeit('my_function()', globals=globals())
-
-34. Use the argparse module for command-line argument parsing.
-    Example: import argparse; parser = argparse.ArgumentParser()
-
-35. Embrace the power of named groups in regular expressions.
-    Example: import re; match = re.match(r'(?P<name>\w+)', 'John')
-
-36. Understand the Global Interpreter Lock (GIL) and its implications.
-    Example: GIL limits concurrent execution of threads in CPython.
-
-37. Leverage the logging module's config file for flexible setup.
-    Example: logging.config.fileConfig('logging.conf')
-
-38. Use the subprocess module for interacting with system processes.
-    Example: import subprocess; subprocess.run(['ls', '-l'])
-
-39. Explore the functools module for higher-order functions.
-    Example: from functools import partial; add_five = partial(lambda x, y: x + y, 5)
-
-40. Take advantage of the collections.Counter for counting occurrences.
-    Example: from collections import Counter; counts = Counter(my_list)
-
-41. Use the issubclass() function for class hierarchy checks.
-    Example: if issubclass(MySubclass, MyBaseClass): ...
-
-42. Utilize the dis module for bytecode analysis.
-    Example: import dis; dis.dis(my_function)
-
-43. Learn about and use the logging module's custom log levels.
-    Example: logging.addLevelName(25, "CUSTOM")
-
-44. Take advantage of the time module for basic timing operations.
-    Example: import time; start_time = time.time()
-
-45. Use the __slots__ attribute for memory-efficient classes.
-    Example: class MyClass: __slots__ = ['attribute1', 'attribute2']
-
-46. Explore the concurrent.futures module for parallelism.
-    Example: from concurrent.futures import ThreadPoolExecutor
-
-47. Use the itertools.chain function for combining iterables.
-    Example: combined = list(itertools.chain(list1, list2))
-
-48. Familiarize yourself with the hashlib module for secure hashing.
-    Example: import hashlib; hashed = hashlib.sha256('data'.encode()).hexdigest()
-
-49. Utilize the typing module for type hints and annotations.
-    Example: def greet(name: str) -> str: ...
-
-50. Use the time.sleep function for adding delays in your code.
-    Example: import time; time.sleep(2)
-
-51. Explore the math module for mathematical operations.
-    Example: import math; square_root = math.sqrt(25)
-
-52. Take advantage of the collections.defaultdict for default values.
-    Example: from collections import defaultdict; counts = defaultdict(int)
-
-53. Understand and use the concept of Python's garbage collection.
-    Example: Reference cycles are automatically detected and collected.
-
-54. Leverage the itertools.product for Cartesian product generation.
-    Example: product = itertools.product('AB', repeat=2)
-
-55. Use the contextlib.suppress context manager for expected exceptions.
-    Example: with suppress(FileNotFoundError): os.remove('file.txt')
-
-56. Explore the difflib module for text difference analysis.
-    Example: import difflib; d = difflib.Differ(); diff = d.compare(text1, text2)
-
-57. Utilize the dataclasses module for concise and readable class definitions.
-    Example: from dataclasses import dataclass; @dataclass; class Person: name: str; age: int
-
-58. Employ the logging module's RotatingFileHandler for log rotation.
-    Example: handler = RotatingFileHandler('my_log.log', maxBytes=100000, backupCount=3)
-
-59. Leverage the functools.lru_cache for memoization of function calls.
-    Example: from functools import lru_cache; @lru_cache(maxsize=None)
-
-60. Use the operator module for functional-style operations.
-    Example: import operator; total = functools.reduce(operator.add, my_list)
-
-61. Understand and use the concurrent.futures module for asynchronous execution.
-    Example: from concurrent.futures import ThreadPoolExecutor; with ThreadPoolExecutor() as executor:
-
-62. Employ the random module for generating pseudo-random numbers.
-    Example: import random; random_number = random.randint(1, 100)
-
-63. Use the typing module's Union for expressing variables with multiple types.
-    Example: def square_root(number: Union[int, float]) -> Union[int, float]:
-
-64. Leverage the pathlib module for path manipulations.
-    Example: from pathlib import Path; my_path = Path('/path/to/file.txt')
-
-65. Understand the principles of Python's memory management.
-    Example: Objects are automatically deallocated when their reference count drops to zero.
-
-66. Utilize the warnings module for issuing warnings in your code.
-    Example: import warnings; warnings.warn("This is a warning message", UserWarning)
-
-67. Explore the re module for powerful regular expression operations.
-    Example: import re; match = re.search(r'\b\d+\b', 'The price is $25')
-
-68. Use the functools.wraps decorator for preserving function metadata.
-    Example: from functools import wraps; @wraps(func)
-
-69. Understand and use the MRO (Method Resolution Order) in Python classes.
-    Example: class MyClass(BaseClass1, BaseClass2): ...
-
-70. Employ the collections.ChainMap for combining multiple dictionaries.
-    Example: from collections import ChainMap; combined_dict = ChainMap(dict1, dict2)
-
-71. Leverage the inspect module for runtime introspection of objects.
-    Example: import inspect; signature = inspect.signature(my_function)
-
-72. Use the textwrap module for text wrapping and filling.
-    Example: import textwrap; wrapped_text = textwrap.wrap(long_text, width=80)
-
-73. Understand and use the Python Data Model for custom classes.
-    Example: Implement __str__, __len__, and other special methods.
-
-74. Employ the io module for efficient handling of I/O operations.
-    Example: from io import StringIO; buffer = StringIO()
-
-75. Leverage the xml.etree.ElementTree module for XML parsing.
-    Example: import xml.etree.ElementTree as ET; root = ET.fromstring(xml_string)
-
-76. Use the collections.deque for efficient append and pop operations.
-    Example: from collections import deque; queue = deque(maxlen=5)
-
-77. Explore the logging module's TimedRotatingFileHandler for time-based log rotation.
-    Example: handler = TimedRotatingFileHandler('my_log.log', when='midnight', interval=1, backupCount=3)
-
-78. Understand the difference between iter() and next() for custom iterators.
-    Example: iterator = iter(my_list); value = next(iterator)
-
-79. Employ the json module's default parameter for custom serialization.
-    Example: json_string = json.dumps(data, default=lambda x: x.__dict__)
-
-80. Leverage the functools.partialmethod for creating partial methods.
-    Example: from functools import partialmethod; partial_method = partialmethod(my_method, arg=5)
-
-81. Understand and use the concept of Python's Global Interpreter Lock (GIL).
-    Example: The GIL ensures that only one thread executes Python bytecode at a time.
-
-82. Employ the heapq module for heap queue algorithms.
-    Example: import heapq; heapq.heapify(my_list)
-
-83. Leverage the ast module for abstract syntax tree manipulation.
-    Example: import ast; tree = ast.parse('print("Hello, World!")')
-
-84. Use the subprocess module's Popen for more control over spawned processes.
-    Example: import subprocess; process = subprocess.Popen(['ls', '-l'], stdout=subprocess.PIPE)
-
-85. Understand the behavior of mutable default arguments in function definitions.
-    Example: def my_function(my_list=[]): ...
-
-86. Employ the concurrent.futures module's as_completed for asynchronous iteration.
-    Example: from concurrent.futures import as_completed; for future in as_completed(futures):
-
-87. Use the shlex module for splitting shell-like syntax.
-    Example: import shlex; tokens = shlex.split('ls -l')
-
-88. Leverage the functools.cached_property for efficient lazy loading.
-    Example: from functools import cached_property; @cached_property
-
-89. Explore the statistics module for basic statistical operations.
-    Example: import statistics; median = statistics.median(data)
-
-90. Employ the weakref module for creating weak references.
-    Example: import weakref; weak_ref = weakref.ref(my_object)
-
-91. Leverage the itertools.tee for creating independent iterators from a single iterable.
-    Example: iterator1, iterator2 = itertools.tee(my_iterable)
-
-92. Use the concurrent.futures module's ThreadPoolExecutor for parallelism.
-    Example: from concurrent.futures import ThreadPoolExecutor; with ThreadPoolExecutor() as executor:
-
-93. Employ the typing module's TypeVar for generic type variables.
-    Example: from typing import TypeVar; T = TypeVar('T')
-
-94. Understand and use the concept of Python's Global Interpreter Lock (GIL).
-    Example: The GIL ensures that only one thread executes Python bytecode at a time.
-
-95. Use the fractions module for precise arithmetic with fractions.
-    Example: from fractions import Fraction; result = Fraction(1, 3) + Fraction(1, 6)
-
-96. Employ the warnings module for issuing warnings in your code.
-    Example: import warnings; warnings.warn("This is a warning message", UserWarning)
-
-97. Explore the contextlib.ExitStack for managing multiple context managers.
-    Example: with ExitStack() as stack: stack.enter_context(manager1); stack.enter_context(manager2)
-
-98. Use the functools.partial for creating partially applied functions.
-    Example: from functools import partial; add_five = partial(lambda x, y: x + y, 5)
-
-99. Leverage the urllib.parse module for URL parsing and manipulation.
-    Example: from urllib.parse import urlparse; parsed_url = urlparse('https://www.example.com/path')
-
-100. Explore the concurrent.futures module's ProcessPoolExecutor for parallelism.
-    Example: from concurrent.futures import ProcessPoolExecutor; with ProcessPoolExecutor() as executor:
+1. **F-Strings for Formatting**: F-strings provide a concise way to embed expressions inside string literals, making string formatting more readable and efficient. For example:
+```python
+name = "Alice"
+age = 30
+print(f"My name is {name} and I am {age} years old.")  # Output: My name is Alice and I am 30 years old.
+```
+
+2. **Dictionary Unpacking**: You can use the double-asterisk (**) syntax to unpack the contents of a dictionary into keyword arguments for a function:
+```python
+params = {'a': 1, 'b': 2, 'c': 3}
+def example_function(a, b, c):
+    print(a, b, c)
+example_function(**params)  # Output: 1 2 3
+```
+
+3. **Zip Function for Parallel Iteration**: `zip` can be used to iterate over multiple iterables in parallel, creating tuples of corresponding elements:
+```python
+names = ['Alice', 'Bob', 'Charlie']
+ages = [25, 30, 35]
+for name, age in zip(names, ages):
+    print(f"{name} is {age} years old.")
+# Output:
+# Alice is 25 years old.
+# Bob is 30 years old.
+# Charlie is 35 years old.
+```
+
+4. **Underscore Placeholder for Large Numbers**: You can use underscores as visual separators for large numbers in Python 3.6+:
+```python
+large_number = 1_000_000_000
+print(large_number)  # Output: 1000000000
+```
+
+5. **Defaultdict for Default Values in Dictionary**: `defaultdict` from the `collections` module allows you to set default values for keys that do not exist yet:
+```python
+from collections import defaultdict
+my_dict = defaultdict(int)
+print(my_dict['key'])  # Output: 0
+```
+
+6. **Multiple Conditions in a List Comprehension**: You can use a list comprehension with multiple conditions for more concise filtering:
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+even_squares = [x**2 for x in numbers if x % 2 == 0]
+print(even_squares)  # Output: [4, 16, 36, 64]
+```
+
+7. **Context Managers with `with` Statement**: The `with` statement is used to wrap the execution of a block of code with methods defined by a context manager:
+```python
+with open('example.txt', 'r') as file:
+    content = file.read()
+# File is automatically closed outside the block.
+```
+
+8. **Global and Local Variables Inside Functions**: To modify a global variable inside a function, use the `global` keyword:
+```python
+global_var = 10
+def modify_global():
+    global global_var
+    global_var += 5
+modify_global()
+print(global_var)  # Output: 15
+```
+
+9. **Enumerate for Index and Value Pairs**: `enumerate` function can be used to iterate over both index and value in a sequence:
+```python
+fruits = ['apple', 'banana', 'cherry']
+for index, value in enumerate(fruits):
+    print(f"Index: {index}, Value: {value}")
+# Output:
+# Index: 0, Value: apple
+# Index: 1, Value: banana
+# Index: 2, Value: cherry
+```
+
+10. **Set for Unique Elements**: Use a set to eliminate duplicate elements from a list:
+```python
+numbers = [1, 2, 3, 1, 2, 4, 5]
+unique_numbers = set(numbers)
+print(unique_numbers)  # Output: {1, 2, 3, 4, 5}
+```
+
+11. **Lambda Functions for Conciseness**: Lambda functions are anonymous functions defined using the `lambda` keyword:
+```python
+multiply = lambda x, y: x * y
+print(multiply(3, 4))  # Output: 12
+```
+
+12. **Map Function for Iterables**: The `map` function applies a given function to all items in an input list:
+```python
+numbers = [1, 2, 3, 4]
+squared = map(lambda x: x**2, numbers)
+print(list(squared))  # Output: [1, 4, 9, 16]
+```
+
+13. **Filter Function for Conditional Filtering**: The `filter` function filters elements of an iterable based on a given function:
+```python
+numbers = [1, 2, 3, 4, 5, 6]
+evens = filter(lambda x: x % 2 == 0, numbers)
+print(list(evens))  # Output: [2, 4, 6]
+```
+
+14. **Try-Except Blocks for Error Handling**: Use `try` and `except` blocks to handle exceptions and prevent crashes:
+```python
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    result = "Error: Division by zero"
+print(result)  # Output: Error: Division by zero
+```
+
+15. **File Reading and Writing Modes**: When working with files, use different modes like `'r'` for reading, `'w'` for writing, and `'a'` for appending:
+```python
+with open('example.txt', 'w') as file:
+    file.write('Hello, World!')
+with open('example.txt', 'r') as file:
+    content = file.read()
+print(content)  # Output: Hello, World!
+```
+
+16. **List Comprehension with Conditional Expression**: You can use conditional expressions within list comprehensions for more concise code:
+```python
+numbers = [1, 2, 3, 4, 5]
+squared_even = [x**2 if x % 2 == 0 else x for x in numbers]
+print(squared_even)  # Output: [1, 4, 3, 16, 5]
+```
+
+17. **JSON Serialization and Deserialization**: Use the `json` module for easy conversion between Python objects and JSON format:
+```python
+import json
+data = {'name': 'John', 'age': 30}
+json_string = json.dumps(data)
+decoded_data = json.loads(json_string)
+print(decoded_data)  # Output: {'name': 'John', 'age': 30}
+```
+
+18. **Merging Dictionaries with `update`**: The `update` method can be used to merge two dictionaries:
+```python
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 3, 'c': 4}
+dict1.update(dict2)
+print(dict1)  # Output: {'a': 1, 'b': 3, 'c': 4}
+```
+
+19. **String Join for Concatenation**: Use the `join` method to concatenate elements of a list into a single string:
+```python
+words = ['Hello', 'World', '!']
+sentence = ' '.join(words)
+print(sentence)  # Output: Hello World !
+```
+
+20. **Slicing**: Slicing is a feature in Python that relies on indexing to allow users to access a subset of a sequence. For example, you can reverse a string using slicing like this¹:
+```python
+a = "Hello World!"
+print(a[::-1])  # Output: "!dlroW olleH"
+```
+
+21. **Inplace Swap / Simultaneous Assignment**: In Python, we can unpack iterables to variables in a single assignment using automatic unpacking¹. For instance:
+```python
+a = 10
+b = 5
+print(f"First: {a, b}")  # Output: First: (10, 5)
+a, b = b, a + 2
+print(f"Second: {a, b}")  # Output: Second: (5, 12)
+```
+
+22. **List vs. Tuples**: Lists and tuples in Python are similar, but tuples are immutable and usually consume less memory. You can check the size of a list and a tuple like this¹:
+```python
+import sys
+a = [1, 2, 3, 4, 5]
+b = (1, 2, 3, 4, 5)
+print(f"List size: {sys.getsizeof(a)} bytes")  # Output: List size: 112 bytes
+print(f"Tuple size: {sys.getsizeof(b)} bytes")  # Output: Tuple size: 96 bytes
+```
+
+```txt
+23. **List and Dictionary Comprehension Together**: You can use list and dictionary comprehensions together to create concise and expressive code:
+```python
+data = [{'name': 'Alice', 'age': 25}, {'name': 'Bob', 'age': 30}, {'name': 'Charlie', 'age': 35}]
+name_age_dict = {person['name']: person['age'] for person in data}
+print(name_age_dict)  # Output: {'Alice': 25, 'Bob': 30, 'Charlie': 35}
+```
+
+24. **Partial Functions with `functools.partial`**: The `functools.partial` function allows you to create partially applied functions with specific arguments fixed:
+```python
+from functools import partial
+def multiply(x, y):
+    return x * y
+double = partial(multiply, y=2)
+print(double(5))  # Output: 10
+```
+
+25. **Pandas DataFrame**: Pandas is a powerful library for data manipulation and analysis. You can create a DataFrame, a 2D labeled data structure, like this:
+```python
+import pandas as pd
+data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+df = pd.DataFrame(data)
+print(df)
+# Output:
+#      Name  Age
+# 0  Alice   25
+# 1    Bob   30
+# 2 Charlie   35
+```
+
+26. **Filtering Data in Pandas**: You can filter rows in a Pandas DataFrame based on a condition:
+```python
+filtered_df = df[df['Age'] > 30]
+print(filtered_df)
+# Output:
+#      Name  Age
+# 2 Charlie   35
+```
+
+27. **Grouping and Aggregating in Pandas**: Use the `groupby` function to group data and then apply aggregate functions:
+```python
+grouped_df = df.groupby('Age').count()
+print(grouped_df)
+# Output:
+#      Name
+# Age
+# 25     1
+# 30     1
+# 35     1
+```
+
+28. **Handling Missing Data in Pandas**: Pandas provides methods like `dropna` and `fillna` to handle missing data in DataFrames:
+```python
+df_with_missing = pd.DataFrame({'A': [1, 2, np.nan], 'B': [4, np.nan, 6]})
+cleaned_df = df_with_missing.dropna()
+print(cleaned_df)
+# Output:
+#      A    B
+# 0  1.0  4.0
+```
+
+29. **Merging DataFrames in Pandas**: Combine two DataFrames using the `merge` function:
+```python
+df1 = pd.DataFrame({'ID': [1, 2], 'Name': ['Alice', 'Bob']})
+df2 = pd.DataFrame({'ID': [1, 2], 'Age': [25, 30]})
+merged_df = pd.merge(df1, df2, on='ID')
+print(merged_df)
+# Output:
+#    ID   Name  Age
+# 0   1  Alice   25
+# 1   2    Bob   30
+```
+
+30. **Pandas `apply` Function**: Use the `apply` function to apply a custom function to each element or row in a DataFrame:
+```python
+df['Name_Length'] = df['Name'].apply(len)
+print(df)
+# Output:
+#      Name  Age  Name_Length
+# 0  Alice   25           5
+# 1    Bob   30           3
+# 2 Charlie   35           7
+```
+
+31. **Pandas `pivot_table` for Data Aggregation**: `pivot_table` is a versatile method for reshaping and aggregating data in Pandas:
+```python
+pivot_df = df.pivot_table(index='Age', values='Name', aggfunc='count')
+print(pivot_df)
+# Output:
+#      Name
+# Age
+# 25     1
+# 30     1
+# 35     1
+```
+
+32. **Pandas `cut` for Binning Data**: Use `cut` to segment and sort data values into bins:
+```python
+ages = [18, 25, 30, 40, 50, 60, 70]
+bins = [18, 30, 50, 70]
+df['Age_Group'] = pd.cut(df['Age'], bins)
+print(df)
+# Output:
+#      Name  Age  Age_Group
+# 0  Alice   25   (18, 30]
+# 1    Bob   30   (18, 30]
+# 2 Charlie   35   (30, 50]
+```
+
+33. **Pandas `to_csv` for Exporting Data**: Save a DataFrame to a CSV file using the `to_csv` method:
+```python
+df.to_csv('output.csv', index=False)
+# CSV file contains the DataFrame data.
+```
+
+34. **Pandas `read_csv` for Importing Data**: Read data from a CSV file into a Pandas DataFrame with the `read_csv` function:
+```python
+imported_df = pd.read_csv('output.csv')
+print(imported_df)
+# DataFrame contains the data from the CSV file.
+```
+
+35. **Pandas `value_counts` for Frequency Counts**: `value_counts` provides a quick count of unique values in a Pandas Series:
+```python
+count_series = df['Age'].value_counts()
+print(count_series)
+# Output:
+# 30    1
+# 35    1
+# 25    1
+# Name: Age, dtype: int64
+```
+
+36. **Pandas `iloc` for Integer-location Based Indexing**: Use `iloc` to access DataFrame elements by integer-based indexing:
+```python
+element = df.iloc[0, 1]  # Accessing the element in the first row and second column.
+print(element)
+```
+
+37. **Pandas `loc` for Label-based Indexing**: `loc` is used for label-based indexing of DataFrame elements:
+```python
+subset_df = df.loc[df['Age'] > 30, ['Name', 'Age']]
+print(subset_df)
+# Output:
+#      Name  Age
+# 2 Charlie   35
+```
+
+38. **Pandas `merge` with Different Join Types**: Specify different join types like 'inner' or 'outer' when merging DataFrames:
+```python
+merged_inner = pd.merge(df1, df2, on='ID', how='inner')
+merged_outer = pd.merge(df1, df2, on='ID', how='outer')
+```
+
+39. **Pandas `datetime` for Date and Time Handling**: The `datetime` module in Pandas helps in working with dates and times:
+```python
+df['Date'] = pd.to_datetime(df['Date'])
+print(df.dtypes)  # Check the data type of the 'Date' column.
+```
