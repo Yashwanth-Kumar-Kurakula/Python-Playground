@@ -21,6 +21,6 @@ with smtplib.SMTP("smtp.gmail.com") as connection:
     connection.login(user=my_email, password=password)
     connection.sendmail(from_addr=my_email,
                         to_addrs="Replace with To Address",
-                        msg=f"Subject:Daily Motivation by DelusionalDeveloper \n\n{quote} \n Tip of the day: {random.randint(0,99)}")
+                        msg=f"Subject:Daily Motivation by DelusionalDeveloper \n\n{quote} \n Tip of the day: {tips[random.randint(0,39)]}")
 
 
