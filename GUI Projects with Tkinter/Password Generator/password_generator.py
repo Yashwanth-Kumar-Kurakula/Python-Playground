@@ -8,6 +8,9 @@ import string
 from tkinter import messagebox
 
 def generate_password():
+    """
+    Generates a random password based on user settings and updates the password_var.
+    """
     global password_var, password_length_var, include_numbers_var, include_symbols_var, include_uppercase_var
     try:
         password_length = password_length_var.get()
@@ -25,27 +28,33 @@ def generate_password():
 
         password = "".join(random.choice(password_characters) for _ in range(password_length)) 
         password_var.set(password)
-        
+
 def add_to_file():
+    """
+    Adds website, email, and password to a file if they are valid.
+    """
     global website_var, email_var, password_var
     if((website_var.get() is not None and website_var.get() != "") and (email_var.get() is not None and email_var.get() != "")):
         if (password_var.get() is not None and password_var.get() != ""):
             with open("passwords", "a") as f:
                 f.writelines(f"{website_var.get()} | {email_var.get()} | {password_var.get()}\n")
-        
         else:
             messagebox.showerror("Error", "Invalid Password Detected. Please enter a password or use the Generate Password button to create a new one")
-
     else:
         messagebox.showerror("Invalid Entries Detected", "Please check all the fields once again")
 
-
 def apply_settings(amountused):
+    """
+    Updates password length based on the user's input.
+    """
     global password_length_var
     amount_used_temp = amountused.get()
     password_length_var.set(amount_used_temp)
 
 def additional_settings():
+    """
+    Opens a new window with additional password settings.
+    """
     global password_length_var, include_uppercase_var, include_numbers_var, include_symbols_var
     temp = password_length_var.get()
     top_level_window = tk.Toplevel(window)
@@ -73,31 +82,28 @@ def additional_settings():
     include_uppercase_cb.grid(row=0, column=2, padx=3, pady=3, sticky="EW")
 
     include_numbers_cb = ttk.Checkbutton(top_level_window, 
-                                           text="Include Numbers", 
-                                           offvalue=0, 
-                                           onvalue=1, 
-                                           variable=include_numbers_var,
-                                           bootstyle="round-toggle")
+                                         text="Include Numbers", 
+                                         offvalue=0, 
+                                         onvalue=1, 
+                                         variable=include_numbers_var,
+                                         bootstyle="round-toggle")
     include_numbers_cb.grid(row=1, column=2, padx=3, pady=3, sticky="EW")
 
     include_symbols_cb = ttk.Checkbutton(top_level_window, 
-                                           text="Include Symbols", 
-                                           offvalue=0, 
-                                           onvalue=1, 
-                                           variable=include_symbols_var,
-                                           bootstyle="round-toggle"
-                                           )
+                                         text="Include Symbols", 
+                                         offvalue=0, 
+                                         onvalue=1, 
+                                         variable=include_symbols_var,
+                                         bootstyle="round-toggle"
+                                         )
     include_symbols_cb.grid(row=2, column=2, padx=3, pady=3, sticky="EW")
 
-    apply_settings_button = ttk.Button(top_level_window,text= "Apply Settings", command=lambda: apply_settings(password_length_entry.amountusedvar))
+    apply_settings_button = ttk.Button(top_level_window, text= "Apply Settings", command=lambda: apply_settings(password_length_entry.amountusedvar))
     apply_settings_button.grid(row=3, column=1, sticky="EW", padx=3, pady=3)
-
-
 
 window = ttk.Window(themename="simplex")
 window.title("Password Manager")
 window.config(padx=20, pady=20)
-
 
 password_length_var = tk.IntVar(value=12)
 include_uppercase_var = tk.IntVar(value=1)
@@ -141,3 +147,4 @@ add_button = ttk.Button(window, text="Add", command=add_to_file)
 add_button.grid(row=5, column=1, columnspan=2, sticky="EW", padx=3, pady=3)
 
 window.mainloop()
+    
