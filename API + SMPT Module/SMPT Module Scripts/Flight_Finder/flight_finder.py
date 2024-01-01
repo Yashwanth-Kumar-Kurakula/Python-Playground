@@ -61,18 +61,23 @@ for j in range(10):
 
     for i in range(len(route)):
         print(f"Route {i+1}: ")
+        fly_from_city = route[i]["cityFrom"]
+        fly_from_city_code = route[i]["cityCodeFrom"]
+        fly_to_city = route[i]["cityTo"]
+        fly_to_city_code = route[i]["cityCodeTo"]
+        print(f"FROM: {fly_from_city} ({fly_from_city_code}) | TO: {fly_to_city} ({fly_to_city_code})")
         airline_name = route[i]["airline"]
         for k in range(len(airline_codes)):
             if str(airline_name) == airline_codes[k]["Carrier Code"]:
                 airline_name = airline_codes[k]["Airline"]
 
-        print(airline_name)
+        print(f"AIRLINES: {airline_name}")
         local_departure_timings = dt_formatter(route[i]["local_departure"])
         print(f"LOCAL DEPARTURE TIMINGS: {local_departure_timings}")
         local_arrival_timings = dt_formatter(route[i]["local_arrival"])
-        print(f"LOCAL ARRIVAL TIMINGS: {local_arrival_timings}")
+        print(f"LOCAL ARRIVAL TIMINGS: {local_arrival_timings} \n")
     
-    print(f"\nFor more information, follow this link: {link}")
+    print(f"For more information, follow this link: {link}")
     
     print("_____________________________________________________")
     
