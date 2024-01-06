@@ -1,5 +1,6 @@
 from tkinter import *
 from random import randint
+from time import sleep, time
 
 HEIGHT = 500
 WIDTH = 800
@@ -60,3 +61,13 @@ def create_bubble():
 def move_bubbles():
     for i in range(len(bubble_id)):
         canvas.move(bubble_id[i], -bubble_speed[i], 0)
+
+RANDOM_BUBBLE = 10
+
+# main loop
+while True:
+    if randint(1, RANDOM_BUBBLE) == 1:
+        create_bubble()
+    move_bubbles()
+    window.update()
+    sleep(0.01)
