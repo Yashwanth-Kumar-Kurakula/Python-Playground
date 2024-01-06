@@ -1,4 +1,5 @@
 from tkinter import *
+from random import randint
 
 HEIGHT = 500
 WIDTH = 800
@@ -37,4 +38,21 @@ def move_submarine(event):
         canvas.move(submarine2_id, SUBMARINE_SPEED, 0)
 
 canvas.bind_all('<Key>', move_submarine)
-    
+
+bubble_id = list()
+radius_id = list()
+bubble_speed = list()
+
+MIN_BUBBLE_RADIUS = 10
+MAX_BUBBLE_RADIUS = 30
+MAX_BUBBLE_SPEED = 10
+GAP = 100
+
+def create_bubble():
+    x = WIDTH + GAP
+    y = randint(0, HEIGHT)
+    r = randint(MIN_BUBBLE_RADIUS, MAX_BUBBLE_RADIUS)
+    id1 = canvas.create_oval(x - r, y - r, x + r, y + r, outline='white')
+    bubble_id.append(id1)
+    radius_id(r)
+    bubble_speed.append(randint(1, MAX_BUBBLE_SPEED))
