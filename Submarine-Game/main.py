@@ -74,6 +74,12 @@ def delete_bubble(i):
     canvas.delete(bubble_id[i])
     del bubble_id[i]
 
+def clear_bubble():
+    for i in range(len(bubble_id) - 1, -1, -1):
+        x, y = find_coords(bubble_id[i])
+        if x < -GAP:
+            delete_bubble(i)
+
 RANDOM_BUBBLE = 10
 
 # main loop
