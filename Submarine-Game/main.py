@@ -19,3 +19,22 @@ Y_CENTER = HEIGHT / 2
 
 canvas.move(submarine_id, X_CENTER, Y_CENTER)
 canvas.move(submarine2_id, X_CENTER, Y_CENTER)
+
+SUBMARINE_SPEED = 10
+
+def move_submarine(event):
+    if event.keysym == 'Up':
+        canvas.move(submarine_id, 0, -SUBMARINE_SPEED)
+        canvas.move(submarine2_id, 0, -SUBMARINE_SPEED)
+    if event.keysym == 'Down':
+        canvas.move(submarine_id, 0, SUBMARINE_SPEED)
+        canvas.move(submarine2_id, 0, SUBMARINE_SPEED)
+    if event.keysym == 'Left':
+        canvas.move(submarine_id, -SUBMARINE_SPEED, 0)
+        canvas.move(submarine2_id, -SUBMARINE_SPEED, 0)
+    if event.keysym == 'Right':
+        canvas.move(submarine_id, SUBMARINE_SPEED, 0)
+        canvas.move(submarine2_id, SUBMARINE_SPEED, 0)
+
+canvas.bind_all('<Key>', move_submarine)
+    
