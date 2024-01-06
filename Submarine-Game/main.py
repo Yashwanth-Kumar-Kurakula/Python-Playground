@@ -50,6 +50,8 @@ MAX_BUBBLE_RADIUS = 30
 MAX_BUBBLE_SPEED = 10
 GAP = 100
 
+RANDOM_BUBBLE = 10
+
 def create_bubble():
     x = WIDTH + GAP
     y = randint(0, HEIGHT)
@@ -94,7 +96,7 @@ def collision():
             delete_bubble(bubble)
     return points
 
-RANDOM_BUBBLE = 10
+score = 0
 
 # main loop
 while True:
@@ -102,5 +104,7 @@ while True:
         create_bubble()
     move_bubbles()
     clear_bubbles()
+    score += collision()
+    print(score)
     window.update()
     sleep(0.01)
