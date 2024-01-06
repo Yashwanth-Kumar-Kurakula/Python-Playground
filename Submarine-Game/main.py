@@ -56,3 +56,7 @@ def create_bubble():
     bubble_id.append(id1)
     radius_id(r)
     bubble_speed.append(randint(1, MAX_BUBBLE_SPEED))
+
+def move_bubbles():
+    for i in range(len(bubble_id)):
+        canvas.move(bubble_id[i], -bubble_speed[i], 0)
