@@ -55,7 +55,7 @@ def create_bubble():
     r = randint(MIN_BUBBLE_RADIUS, MAX_BUBBLE_RADIUS)
     id1 = canvas.create_oval(x - r, y - r, x + r, y + r, outline='white')
     bubble_id.append(id1)
-    radius_id(r)
+    radius_id.append(r)
     bubble_speed.append(randint(1, MAX_BUBBLE_SPEED))
 
 def move_bubbles():
