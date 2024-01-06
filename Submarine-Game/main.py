@@ -74,7 +74,7 @@ def delete_bubble(i):
     canvas.delete(bubble_id[i])
     del bubble_id[i]
 
-def clear_bubble():
+def clear_bubbles():
     for i in range(len(bubble_id) - 1, -1, -1):
         x, y = find_coords(bubble_id[i])
         if x < -GAP:
@@ -87,5 +87,6 @@ while True:
     if randint(1, RANDOM_BUBBLE) == 1:
         create_bubble()
     move_bubbles()
+    clear_bubbles()
     window.update()
     sleep(0.01)
