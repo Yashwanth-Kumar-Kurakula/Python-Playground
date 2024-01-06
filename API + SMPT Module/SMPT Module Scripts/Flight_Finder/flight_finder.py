@@ -1,4 +1,3 @@
-#will add logic to scrape content with other websites aswell
 import requests
 import json
 
