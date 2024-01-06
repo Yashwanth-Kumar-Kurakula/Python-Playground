@@ -62,6 +62,12 @@ def move_bubbles():
     for i in range(len(bubble_id)):
         canvas.move(bubble_id[i], -bubble_speed[i], 0)
 
+def find_coords(num_id):
+    pos = canvas.coords(num_id)
+    x = (pos[0] + pos[2]) / 2
+    y = (pos[1] + pos[3]) / 2
+    return x, y
+
 RANDOM_BUBBLE = 10
 
 # main loop
