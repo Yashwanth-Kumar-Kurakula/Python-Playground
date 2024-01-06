@@ -70,7 +70,7 @@ def find_coords(num_id):
     return x, y
 
 def delete_bubble(i):
-    del bubble_radius
+    del bubble_radius[i]
     del bubble_speed[i]
     canvas.delete(bubble_id[i])
     del bubble_id[i]
@@ -115,12 +115,17 @@ bonus = 0
 end = time() + TIME_LIMIT
 
 # main loop
-while True:
+while time() < end:
     if randint(1, RANDOM_BUBBLE) == 1:
         create_bubble()
     move_bubbles()
     clear_bubbles()
     score += collision()
     print(score)
+    if(int(score / BONUS_SCORE)) > bonus:
+        bonus += 1
+        end += TIME_LIMIT
+    print_score(score)
+    print_time(int(end - time()))
     window.update()
     sleep(0.01)
