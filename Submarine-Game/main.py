@@ -1,6 +1,7 @@
 from tkinter import *
 from random import randint
 from time import sleep, time
+from math import sqrt
 
 HEIGHT = 500
 WIDTH = 800
@@ -79,6 +80,11 @@ def clear_bubbles():
         x, y = find_coords(bubble_id[i])
         if x < -GAP:
             delete_bubble(i)
+
+def distance(id1, id2):
+    x1, y1 = find_coords(id1)
+    x2, y2 = find_coords(id2)
+    return sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
 RANDOM_BUBBLE = 10
 
