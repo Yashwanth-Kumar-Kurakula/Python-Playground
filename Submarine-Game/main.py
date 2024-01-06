@@ -96,6 +96,18 @@ def collision():
             delete_bubble(bubble)
     return points
 
+canvas.create_text(100, 30, text='REMAINING TIME', fill='white')
+canvas.create_text(200, 30, text='SCORE', fill='white')
+
+time_text = canvas.create_text(100, 50, fill='white')
+score_text = canvas.create_text(200, 50, fill='white')
+
+def print_score(score):
+    canvas.itemconfig(score_text, text=str(score))
+
+def print_time(remaining_time):
+    canvas.itemconfig(time_text, text=str(remaining_time))
+
 score = 0
 
 # main loop
