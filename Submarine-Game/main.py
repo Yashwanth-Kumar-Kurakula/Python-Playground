@@ -41,7 +41,7 @@ def move_submarine(event):
 canvas.bind_all('<Key>', move_submarine)
 
 bubble_id = list()
-radius_id = list()
+bubble_radius = list()
 bubble_speed = list()
 
 MIN_BUBBLE_RADIUS = 10
@@ -55,7 +55,7 @@ def create_bubble():
     r = randint(MIN_BUBBLE_RADIUS, MAX_BUBBLE_RADIUS)
     id1 = canvas.create_oval(x - r, y - r, x + r, y + r, outline='white')
     bubble_id.append(id1)
-    radius_id.append(r)
+    bubble_radius.append(r)
     bubble_speed.append(randint(1, MAX_BUBBLE_SPEED))
 
 def move_bubbles():
@@ -67,6 +67,12 @@ def find_coords(num_id):
     x = (pos[0] + pos[2]) / 2
     y = (pos[1] + pos[3]) / 2
     return x, y
+
+def delete_bubble(i):
+    del bubble_radius
+    del bubble_speed[i]
+    canvas.delete(bubble_id[i])
+    del bubble_id[i]
 
 RANDOM_BUBBLE = 10
 
