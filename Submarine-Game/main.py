@@ -86,6 +86,14 @@ def distance(id1, id2):
     x2, y2 = find_coords(id2)
     return sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
+def collision():
+    points = 0
+    for bubble in range(len(bubble_id) - 1, -1, -1):
+        if distance(submarine2_id, bubble_id[bubble]) < (SUBMARINE_RADIUS + bubble_radius[bubble]):
+            points += (bubble_radius[bubble] + bubble_speed[bubble])
+            delete_bubble(bubble)
+    return points
+
 RANDOM_BUBBLE = 10
 
 # main loop
