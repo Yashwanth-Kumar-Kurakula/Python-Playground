@@ -50,8 +50,6 @@ MAX_BUBBLE_RADIUS = 30
 MAX_BUBBLE_SPEED = 10
 GAP = 100
 
-RANDOM_BUBBLE = 10
-
 def create_bubble():
     x = WIDTH + GAP
     y = randint(0, HEIGHT)
@@ -108,7 +106,13 @@ def print_score(score):
 def print_time(remaining_time):
     canvas.itemconfig(time_text, text=str(remaining_time))
 
+RANDOM_BUBBLE = 10
+TIME_LIMIT = 30
+BONUS_SCORE = 1000
+
 score = 0
+bonus = 0
+end = time() + TIME_LIMIT
 
 # main loop
 while True:
