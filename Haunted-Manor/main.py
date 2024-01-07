@@ -4,13 +4,13 @@ print('THE HAUNTED MANOR')
 i_am_brave = True
 score = 0
 
-# main loop
-
+# Main loop
 while i_am_brave:
     ghost_door = randint(1, 3)
     print('You find yourself facing three doors...')
     print('Behind which is the ghost?')
     print('What door do you open?')
+    
     door = input('1, 2 or 3? ')
     door_number = int(door)
 
@@ -23,4 +23,4 @@ while i_am_brave:
         score += 1
 
 print('Help!')
-print('Game over! Your score :', score)
+print('Game over! Your score:', score)
