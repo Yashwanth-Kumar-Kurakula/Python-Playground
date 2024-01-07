@@ -13,3 +13,11 @@ while i_am_brave:
     print('What door do you open?')
     door = input('1, 2 or 3? ')
     door_number = int(door)
+
+    if door_number == ghost_door:
+        print('A GHOST!')
+        i_am_brave = False
+    else:
+        print('No ghost!')
+        print('You enter the next room.')
+        score += 1
