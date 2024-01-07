@@ -15,9 +15,12 @@ while i_am_brave:
     door_number = int(door)
 
     if door_number == ghost_door:
-        print('A GHOST!')
+        print('\nA GHOST!')
         i_am_brave = False
     else:
-        print('No ghost!')
+        print('\nNo ghost!')
         print('You enter the next room.')
         score += 1
+
+print('Help!')
+print('Game over! Your score :', score)
