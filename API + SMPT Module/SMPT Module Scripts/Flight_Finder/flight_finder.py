@@ -1,4 +1,3 @@
-#This works but this is not the optimal way to find the best deals, will work on enhancing this soon.
 import requests
 import json
 
