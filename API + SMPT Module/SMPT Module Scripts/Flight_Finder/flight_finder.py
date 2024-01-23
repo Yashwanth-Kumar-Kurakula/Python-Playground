@@ -1,4 +1,3 @@
-#code updating soon
 import requests
 import json
 
