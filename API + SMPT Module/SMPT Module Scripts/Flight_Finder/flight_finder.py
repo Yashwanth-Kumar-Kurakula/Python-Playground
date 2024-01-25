@@ -1,4 +1,3 @@
-#Use pythonanywhere to automate the process and smtp module to email you the daily findings
 import requests
 import json
 
