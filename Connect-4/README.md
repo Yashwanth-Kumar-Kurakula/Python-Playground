@@ -23,7 +23,7 @@ pip install pygame
 To play the game, clone this repository with `git clone https://github.com/Yashwanth-Kumar-Kurakula/Python-Playground.git` and go to the game folder:
 
 ```sh
-cd Python-Playgroud/Connect-4
+cd Python-Playground/Connect-4
 ```
 
 Then, run:
