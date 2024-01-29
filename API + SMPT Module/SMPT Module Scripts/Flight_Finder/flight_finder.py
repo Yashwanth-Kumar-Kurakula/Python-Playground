@@ -1,4 +1,3 @@
-#use smtp to automate the process and send mails for regular updates.
 import requests
 import json
 
