@@ -1,3 +1,4 @@
+#Add SMTP support and use pythonanywhere to automate mails daily on flights 
 import requests
 import json
 
